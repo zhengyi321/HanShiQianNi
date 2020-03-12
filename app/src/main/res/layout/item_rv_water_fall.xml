@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="10dp"
+    android:orientation="vertical"
+    android:id="@+id/lly_item_water_fall"
+    >
+    <com.zhyan.hanshiqianni.widget.imageview.RoundImageView
+        android:id="@+id/iv_item_water_fall"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/p1"
+        app:round_leftUp="2dp"
+        app:round_rightUp="2dp"
+        app:round_leftDown="0dp"
+        app:round_rightDown="0dp"/>
+    <!--<com.angel.view.SWImageView
+        android:id="@+id/iv_item_water_fall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:type="round"
+        app:borderRadius="2dp"
+        />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/waterfallshape"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aaaaaa"
+        android:textColor="@color/black"
+
+        />
+    </LinearLayout>
+</LinearLayout>

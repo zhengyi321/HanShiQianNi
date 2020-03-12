@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+//butter knife4处 第4处
+apply plugin: 'com.jakewharton.butterknife'
+//butter knife4处 第4处
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.zhyan.hanshiqianni"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //    butterknife4处 第2处 需要用到java1.8
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+    //    butterknife 4处 第2处
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    //    butterknife4处  第1处
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    //    butterknife4处 第1处
+//    轮播  1处
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+//    轮播
+//    瀑布流  1处
+//    implementation 'com.angel:SWImageView:1.0.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-32'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha01'
+    //    瀑布流
+
+//    商品详情页
+    api 'com.bigkoo:convenientbanner:2.0.5'
+    implementation 'com.google.android.material:material:1.1.0'
+//    商品详情页
+}
